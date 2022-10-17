@@ -1,0 +1,22 @@
+Follow below instruction to use this demo to deploy a web app created using Streamlit to Heroku
+Tutorial Link - https://www.youtube.com/playlist?list=PLZoTAELRMXVOAvUbePX1lTdxQR8EY35Z1
+Below is a reference link
+https://github.com/krishnaik06/Heroku-Demo
+
+1. Create requirement.txt file
+    a. First install pipreqs libraray which will generate the requirements.txt file.
+    b. pipreqs ./ - This will create a requirements.txt file which will contain all the libraries used and will not include the optional dependancy libraries
+2. Create a normal text file and name is as setup.txt, once you paste the contents shown in the reference link save and rename the file as setup.shown
+3. Create a normal text file and name is as Procfile.txt and add the command - web: sh setup.sh && streamlit run app.py (remember the file name should be same as our main py file name here app.py), save nd rename it as just Procfile instead of Procfile.txt as it should not have any extension
+4. Install Git from https://git-scm.com/downloads - by default installed in mac
+5. In the StreamlitHeroku demo we had directly published the code to Heroku git, now here we will push the code to our git repo and link it in Heroku.
+Check out - https://dennisivy.com/github-quickstart
+7. Init a git repository in the folder - git init
+8. Login to heroku using heroku cli - heroku login
+9. heroku create desireddomainname(heroku create chethanchandran)
+10. Push your files to git
+    a. git add .
+    b. git commit -m "initial commit"
+    c. Push the files to git - git push heroku master - If there is an error with the versio of the package used set like pandas==1.2.0 to pandas<1.2.0
+11. Heroku will put our application to sleep after 30 mins, to stop that from happpening we can use the below link to refresh the app eveery 30 mins
+https://kaffeine.herokuapp.com/
